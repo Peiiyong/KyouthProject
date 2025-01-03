@@ -1,11 +1,13 @@
 public class Car {
+    private int id;
     private String name;
     private String model;
     private double price;
     private String color;
 
     // Constructor
-    public Car(String name, String model, double price, String color) {
+    public Car(int id, String name, String model, double price, String color) {
+        this.id = id;
         this.name = name;
         this.model = model;
         this.price = price;
@@ -13,6 +15,14 @@ public class Car {
     }
 
     // Getter and Setter for 'name'
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
     }
