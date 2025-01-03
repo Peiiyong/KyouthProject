@@ -53,4 +53,8 @@ public class SalesReport {
             }
         }
     }
+
+    public String[] getCarModels() {
+        return carModels;
+    }
 }
