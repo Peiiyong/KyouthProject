@@ -1,9 +1,16 @@
 public class SalesReport {
-    int sales[][];//month and number of car sold
+    private int[][] sales; // Rows: months, Columns: cars
 
-    public SalesReport(int carSold){
-        sales= new int[12][carSold];//carSold is the length of array of object car that have been sold
+    // Constructor
+    public SalesReport(int numberOfCars) {
+        sales = new int[12][numberOfCars];//the length of the array of sold car
     }
 
+    // Add sales data
+    public void addSale(int month, int carIndex, int count) {
+        if (month >= 1 && month <= 12 && carIndex >= 0 && carIndex < sales[0].length) {
+            sales[month - 1][carIndex] += count;
+        }
+    }
 
 }
