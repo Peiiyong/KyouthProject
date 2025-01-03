@@ -56,7 +56,6 @@ public class InventoryManager {
         }
     }
 
-    // Method to get the size of inventory
     public int getInventorySize() {
         return inventory.size();
     }
