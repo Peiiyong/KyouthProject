@@ -4,7 +4,6 @@ public class Car {
     private double price;
     private String color;
 
-    // Constructor
     public Car(String name, String model, double price, String color) {
         this.name = name;
         this.model = model;
@@ -12,7 +11,6 @@ public class Car {
         this.color = color;
     }
 
-    // Getter and Setter for 'name'
     public String getName() {
         return name;
     }
@@ -21,7 +19,6 @@ public class Car {
         this.name = name;
     }
 
-    // Getter and Setter for 'model'
     public String getModel() {
         return model;
     }
@@ -30,7 +27,6 @@ public class Car {
         this.model = model;
     }
 
-    // Getter and Setter for 'price'
     public double getPrice() {
         return price;
     }
@@ -39,12 +35,15 @@ public class Car {
         this.price = price;
     }
 
-    // Getter and Setter for 'color'
     public String getColor() {
         return color;
     }
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    public String toString() {
+        return "Car [name=" + name + ", model=" + model + ", price=" + price + ", color=" + color + "]";
     }
 }
