@@ -6,31 +6,31 @@ Assignment Breakdown:
 Team Structure and Responsibilities:
 
 
-Team Member 1: Car Class
+Team Member 1: Car Class (CY)
 
 Define the Car class to represent car details.
 Include attributes and methods for encapsulation, constructors, and string representation.
 
 
-Team Member 2: Inventory Management
+Team Member 2: Inventory Management (Luck Phang)
 
 Develop the InventoryManager class to handle operations on the car inventory.
 Include methods for adding, searching, removing, and updating cars.
 
 
-Team Member 3: Sales Report
+Team Member 3: Sales Report (YeeThong)
 
 Create the SalesReport class to manage sales tracking and generate reports.
 Use a 2D array (matrix) for monthly sales data.
 
 
-Team Member 4: Input/Output Handler
+Team Member 4: Input/Output Handler (PingSeng)
 
 Build the IOHandler class for console input/output operations using Scanner.
 Include methods for menu display and user interaction.
 
 
-Team Member 5: Main Application
+Team Member 5: Main Application (PY)
 
 Implement the CarDealershipApp class (main program).
 Integrate all components, manage program flow, and implement the menu.
