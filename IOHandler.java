@@ -3,10 +3,14 @@ import java.util.Scanner;
 public class IOHandler {
     private Scanner scanner;
     private InventoryManager inventoryManager;
+    private SalesReport salesReport;
+    private String[] carModels;
 
-    public IOHandler(InventoryManager inventoryManager) {
+    public IOHandler(InventoryManager inventoryManager, SalesReport salesReport, String[] carModels) {
         this.scanner = new Scanner(System.in);
         this.inventoryManager = inventoryManager;
+        this.salesReport = salesReport;
+        this.carModels = carModels;
     }
 
     public void start() {
@@ -24,8 +28,11 @@ public class IOHandler {
         System.out.println("3. Search Car");
         System.out.println("4. Update Car");
         System.out.println("5. Display Inventory");
+        System.out.println("6. Record Sale");
+        System.out.println("7. Monthly Sales Report");
+        System.out.println("8. Total Sales Report");
         System.out.println("0. Exit");
-        return getIntInput("Enter your choice (0-5): ", 0, 5);
+        return getIntInput("Enter your choice (0-8): ", 0, 8);
     }
 
     private void processChoice(int choice) {
@@ -35,6 +42,9 @@ public class IOHandler {
             case 3 -> handleSearchCar();
             case 4 -> handleUpdateCar();
             case 5 -> handleDisplayInventory();
+            case 6 -> handleRecordSale();
+            case 7 -> handleMonthlySalesReport();
+            case 8 -> handleTotalSalesReport();
             case 0 -> System.out.println("Thank you for using the system!");
             default -> System.out.println("Invalid choice!");
         }
@@ -70,6 +80,28 @@ public class IOHandler {
 
     private void handleDisplayInventory() {
         inventoryManager.displayInventory();
+    }
+
+    private void handleRecordSale() {
+        System.out.println("\nRecord New Sale");
+        int month = getIntInput("Enter Month (1-12)", 1, 12);
+        System.out.println("\nSelect Car Model:");
+        for (int i = 0; i < carModels.length; i++) {
+            System.out.println((i+1) + ". " + carModels[i]);
+        }
+        int modelIndex = getIntInput("Enter car model number", 1, carModels.length) - 1;
+        int units = getIntInput("Enter number of units sold", 1, 100);
+        salesReport.recordSale(month, modelIndex, units);
+        System.out.println("Sale recorded successfully.");
+    }
+
+    private void handleMonthlySalesReport() {
+        int month = getIntInput("Enter Month (1-12) for report", 1, 12);
+        salesReport.generateMonthlyReport(month);
+    }
+
+    private void handleTotalSalesReport() {
+        salesReport.generateTotalSalesReport();
     }
 
     public Car inputCarDetails() {
